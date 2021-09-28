@@ -33,7 +33,7 @@ namespace ValidarCPF
             this.label2 = new System.Windows.Forms.Label();
             this.btnValidar = new System.Windows.Forms.Button();
             this.lblResul = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTxtCPF = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -65,6 +65,8 @@ namespace ValidarCPF
             this.btnValidar.TabIndex = 3;
             this.btnValidar.Text = "Validar";
             this.btnValidar.UseVisualStyleBackColor = true;
+            this.btnValidar.Click += new System.EventHandler(this.btnValidar_Click);
+            this.btnValidar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnValidar_KeyPress);
             // 
             // lblResul
             // 
@@ -73,28 +75,31 @@ namespace ValidarCPF
             this.lblResul.Name = "lblResul";
             this.lblResul.Size = new System.Drawing.Size(392, 180);
             this.lblResul.TabIndex = 4;
+            this.lblResul.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // maskedTextBox1
+            // maskedTxtCPF
             // 
-            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.Location = new System.Drawing.Point(70, 120);
-            this.maskedTextBox1.Mask = "000,000,000-00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(163, 27);
-            this.maskedTextBox1.TabIndex = 5;
-            this.maskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.maskedTxtCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTxtCPF.Location = new System.Drawing.Point(70, 120);
+            this.maskedTxtCPF.Mask = "000,000,000-00";
+            this.maskedTxtCPF.Name = "maskedTxtCPF";
+            this.maskedTxtCPF.Size = new System.Drawing.Size(163, 27);
+            this.maskedTxtCPF.TabIndex = 5;
+            this.maskedTxtCPF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // validadorCPF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(435, 384);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.maskedTxtCPF);
             this.Controls.Add(this.lblResul);
             this.Controls.Add(this.btnValidar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "validadorCPF";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Validador de CPF";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -107,7 +112,7 @@ namespace ValidarCPF
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnValidar;
         private System.Windows.Forms.Label lblResul;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox maskedTxtCPF;
     }
 }
 
